@@ -1,1 +1,4 @@
 /target
+
+# oboro の Main agent が書くローカル状態(orchestrator スキル)
+.oboro/state.md

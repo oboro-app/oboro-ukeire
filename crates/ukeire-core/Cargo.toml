@@ -1,0 +1,12 @@
+# 共通の型と設定。詳細は workspace の Cargo.toml と docs/design.md を参照。
+[package]
+name = "ukeire-core"
+description = "ukeire の共通の型、ID、段階、状態、設定"
+edition.workspace = true
+rust-version.workspace = true
+version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lints]
+workspace = true

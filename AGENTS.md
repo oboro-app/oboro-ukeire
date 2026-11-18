@@ -50,8 +50,10 @@ cargo のビルド・テストは `<obr> resources run -- <command>` で実行�
   (`testing` スキルの New worktree 参照)
 - 品質ゲートはローカル環境の fmt + clippy + test を正とする(`docs/design.md` 品質の関門)。
   merge の時に oboro が `.oboro/config.toml` の `[ci]` コマンドとして実行する
-- **GitHub Actions は使わない**。`.github/workflows` へのファイル追加は、
-  人間が明示的に求めた時だけ行う
+- **公開 repo の CI/CD は GitHub Actions で行う**(人間の常設の方針。runner が
+  無料のため)。`.github/workflows/ci.yml` が品質の関門と同じ fmt + clippy +
+  test と各 OS の build を回す。workflow に secret が必要な時は入れずに
+  Main へ報告し、人間に確かめる
 - PR 単位の検査は `testing` スキルの Check scope に従う。基本は
   `cargo fmt --all --check`、`clippy --workspace --all-targets -- -D warnings`、
   `cargo test --workspace`(スコープのフィルタ可)

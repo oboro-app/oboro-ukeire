@@ -2,7 +2,8 @@
 slots = 4
 
 # oboro の merge 時チェック。品質ゲートは fmt + clippy + test
-# (人間の指示、Issue #1)。docs/design.md の品質の関門と同じ 3 コマンド
+# (人間の指示、Issue #1)。docs/design.md の品質の関門と同じ 3 コマンド。
+# 同じ 3 コマンドを GitHub Actions (.github/workflows/ci.yml) でも回す (Issue #4)
 [ci]
 runner = "local"
 command = "cargo fmt --all --check && cargo clippy --workspace --all-targets -- -D warnings && cargo test --workspace"
